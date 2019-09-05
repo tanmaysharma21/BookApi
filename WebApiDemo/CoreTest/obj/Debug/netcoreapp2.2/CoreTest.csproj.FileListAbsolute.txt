@@ -1,0 +1,16 @@
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\obj\Debug\netcoreapp2.2\CoreTest.csprojResolveAssemblyReference.cache
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\obj\Debug\netcoreapp2.2\CoreTest.csproj.CoreCompileInputs.cache
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\obj\Debug\netcoreapp2.2\CoreTest.AssemblyInfoInputs.cache
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\obj\Debug\netcoreapp2.2\CoreTest.AssemblyInfo.cs
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\bin\Debug\netcoreapp2.2\CoreTest.deps.json
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\bin\Debug\netcoreapp2.2\CoreTest.runtimeconfig.json
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\bin\Debug\netcoreapp2.2\CoreTest.runtimeconfig.dev.json
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\bin\Debug\netcoreapp2.2\CoreTest.dll
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\bin\Debug\netcoreapp2.2\CoreTest.pdb
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\bin\Debug\netcoreapp2.2\WebApiDemo.dll
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\bin\Debug\netcoreapp2.2\WebApiDemo.pdb
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\obj\Debug\netcoreapp2.2\CoreTest.dll
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\CoreTest\obj\Debug\netcoreapp2.2\CoreTest.pdb
