@@ -23,23 +23,48 @@ namespace WebApiDemo.Service
             return bookData.GetBookById(id);
         }
 
-        public void Post(Book book)
+        public bool Post(Book book)
         {
-            bookData.Add(book);
+            if (!ValidateBook(book))
+                throw new Exception();
+            try
+            {
+                bookData.Add(book);
+                return true;
+            }
+            catch
+            {
+                throw new Exception();
+            }
         }
 
-        public void Put(int id, Book book)
+        public bool ValidateBook(Book book)
         {
+            if (book.Id <= 0)
+                return false;
+            if (book.Name == null || book.Author == null || book.Category == null)
+                return false;
+            if (book.Price <= 0)
+                return false;
+            return true;
+        }
+
+        public bool Put(int id, Book book)
+        {
+            if (!ValidateBook(book))
+                throw new Exception();
             if (id < 0)
                 throw new Exception();
             bookData.Update(id, book);
+            return true;
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            if (id < 0)
+            if (id <= 0)
                 throw new Exception();
             bookData.DeleteBook(id);
+            return true;
         }
 
     }

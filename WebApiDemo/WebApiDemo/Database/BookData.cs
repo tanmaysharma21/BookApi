@@ -36,14 +36,18 @@ namespace WebApiDemo.Database
 
         public void Update(int id, Book book)
         {
+            int x = 0;
             for (int i = 0; i < bookList.Count; i++)
             {
                 if (bookList[i].Id == id)
                 {
                     bookList[i] = book;
+                    x=1;
                     break;
                 }
             }
+            if (x == 0)
+                throw new Exception();
         }
 
         public void DeleteBook(int id)

@@ -16,37 +16,73 @@ namespace WebApiDemo.Controllers
         public BookService bookService = new BookService();
         // GET: api/book
         [HttpGet]
-        public List<Book> Get()
+        public ActionResult<List<Book>> Get()
         {
-            return bookService.Get();
+            try
+            {
+                return Ok(bookService.Get());
+            }
+            catch
+            {
+                return NotFound();
+            }
         }
 
         // GET api/book/5
         [HttpGet("{id}")]
-        public Book Get(int id)
+        public ActionResult<Book> Get(int id)
         {
-            return bookService.Get(id);
+            try
+            {
+                return Ok(bookService.Get(id));
+            }
+            catch
+            {
+                return NotFound();
+            }
         }
 
         // POST api/book
         [HttpPost]
-        public void Post([FromBody]Book book)
+        public ActionResult Post([FromBody]Book book)
         {
-            bookService.Post(book);
+            try
+            {
+                return Ok(bookService.Post(book));
+            }
+            catch
+            {
+                return NotFound();
+            }
         }
 
         // PUT api/book/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]Book book)
+        public ActionResult Put(int id, [FromBody]Book book)
         {
-            bookService.Put(id, book);
+            try
+            {
+                return Ok(bookService.Put(id, book));
+            }
+            catch
+            {
+                return NotFound();
+            }
         }
 
         // DELETE api/book/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(int id)
         {
-            bookService.Delete(id);
+            try
+            {
+                return Ok(bookService.Delete(id));
+            }
+            catch
+            {
+                return NotFound();
+            }
+                
         }
     }
 }
