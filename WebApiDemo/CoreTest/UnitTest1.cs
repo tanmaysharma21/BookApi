@@ -23,11 +23,24 @@ namespace CoreTest
         }
 
         [Fact]
+        public void Get_InvalidId_ThrowsException()
+        {
+            Assert.Throws<Exception>(() => bookService.Get(33));
+        }
+
+        [Fact]
         public void Post_CountOfList_3()
         {
             bookService.Post(new Book() { Name = "Flights", Author = "APJ", Category = "Fiction", Id = 231, Price = 732 } );
             List<Book> bookList = bookService.Get();
             Assert.Equal(3, bookList.Count);
+        }
+
+        [Fact]
+        public void Put_InvalidBookObject_ThrowsException()
+        {
+            Book book = new Book() { Name = "Tanmay" };
+            Assert.Throws<Exception>(() => bookService.Put(101, book));
         }
 
         [Fact]
