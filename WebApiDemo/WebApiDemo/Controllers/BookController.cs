@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApiDemo.Service;
 using WebApiDemo.Model;
+using WebApiDemo.ApiReturnModel;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,71 +19,55 @@ namespace WebApiDemo.Controllers
         [HttpGet]
         public ActionResult<List<Book>> Get()
         {
-            try
-            {
-                return Ok(bookService.Get());
-            }
-            catch
-            {
-                return NotFound();
-            }
+            ApiModel apiModel = new ApiModel();
+            bookService.Get(apiModel);
+            if (apiModel.errorList.Count == 0)
+                return Ok(apiModel.apiRequestResult);
+            return NotFound(apiModel.errorList);
         }
 
         // GET api/book/5
         [HttpGet("{id}")]
         public ActionResult<Book> Get(int id)
         {
-            try
-            {
-                return Ok(bookService.Get(id));
-            }
-            catch
-            {
-                return NotFound();
-            }
+            ApiModel apiModel = new ApiModel();
+            bookService.Get(id, apiModel);
+            if (apiModel.errorList.Count == 0)
+                return Ok(apiModel.apiRequestResult);
+            return NotFound(apiModel.errorList);
         }
 
         // POST api/book
         [HttpPost]
         public ActionResult Post([FromBody]Book book)
         {
-            try
-            {
-                return Ok(bookService.Post(book));
-            }
-            catch
-            {
-                return NotFound();
-            }
+            ApiModel apiModel = new ApiModel();
+            bookService.Post(book, apiModel);
+            if (apiModel.errorList.Count == 0)
+                return Ok();
+            return BadRequest(apiModel.errorList);
         }
 
         // PUT api/book/5
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody]Book book)
         {
-            try
-            {
-                return Ok(bookService.Put(id, book));
-            }
-            catch
-            {
-                return NotFound();
-            }
+            ApiModel apiModel = new ApiModel();
+            bookService.Put(id, book, apiModel);
+            if (apiModel.errorList.Count == 0)
+                return Ok();
+            return BadRequest(apiModel.errorList);
         }
 
         // DELETE api/book/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
-            try
-            {
-                return Ok(bookService.Delete(id));
-            }
-            catch
-            {
-                return NotFound();
-            }
-                
+            ApiModel apiModel = new ApiModel();
+            bookService.Delete(id, apiModel);
+            if (apiModel.errorList.Count == 0)
+                return Ok();
+            return NotFound(apiModel.errorList);
         }
     }
 }

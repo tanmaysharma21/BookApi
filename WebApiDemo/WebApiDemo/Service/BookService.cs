@@ -2,69 +2,50 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApiDemo.ApiReturnModel;
 using WebApiDemo.Database;
 using WebApiDemo.Model;
+using WebApiDemo.Validator;
 
 namespace WebApiDemo.Service
 {
     public class BookService
     {
         public BookData bookData = new BookData();
+        public BookValidator bookValidator = new BookValidator();
 
-        public List<Book> Get()
+        public void Get(ApiModel apiModel)
         {
-            return bookData.GetBooks();
+            bookData.GetBooks(apiModel);
         }
 
-        public Book Get(int id)
+        public void Get(int id, ApiModel apiModel)
         {
-            if (id <= 0)
-                throw new Exception();
-            return bookData.GetBookById(id);
+            bookValidator.ValidateApiId(id, apiModel);
+            if (apiModel.errorList.Count == 0)
+                bookData.GetBookById(id, apiModel);
         }
 
-        public bool Post(Book book)
+        public void Post(Book book, ApiModel apiModel)
         {
-            if (!ValidateBook(book))
-                throw new Exception();
-            try
-            {
+            bookValidator.ValidateBook(book, apiModel);
+            if (apiModel.errorList.Count == 0)
                 bookData.Add(book);
-                return true;
-            }
-            catch
-            {
-                throw new Exception();
-            }
         }
 
-        public bool ValidateBook(Book book)
+
+        public void Put(int id, Book book, ApiModel apiModel)
         {
-            if (book.Id <= 0)
-                return false;
-            if (book.Name == null || book.Author == null || book.Category == null)
-                return false;
-            if (book.Price <= 0)
-                return false;
-            return true;
+            bookValidator.ValidateApiId(id, apiModel);
+            bookValidator.ValidateBook(book, apiModel);
+            bookData.Update(id, book, apiModel);
         }
 
-        public bool Put(int id, Book book)
+        public void Delete(int id, ApiModel apiModel)
         {
-            if (!ValidateBook(book))
-                throw new Exception();
-            if (id < 0)
-                throw new Exception();
-            bookData.Update(id, book);
-            return true;
-        }
-
-        public bool Delete(int id)
-        {
-            if (id <= 0)
-                throw new Exception();
-            bookData.DeleteBook(id);
-            return true;
+            bookValidator.ValidateApiId(id, apiModel);
+            if (apiModel.errorList.Count==0)
+                bookData.DeleteBook(id, apiModel);
         }
 
     }

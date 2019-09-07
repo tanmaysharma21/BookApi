@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApiDemo.ApiReturnModel;
 using WebApiDemo.Model;
 
 namespace WebApiDemo.Database
@@ -14,19 +15,26 @@ namespace WebApiDemo.Database
             new Book(){ Name = "Microprocessor", Author="Sinha", Category="Electronics", Id = 73, Price=792}
         };
 
-        public List<Book> GetBooks()
+        public void GetBooks(ApiModel apiModel)
         {
-            return bookList;
+            apiModel.AddBookList(bookList);
         }
 
-        public Book GetBookById(int id)
+        public void GetBookById(int id, ApiModel apiModel)
         {
+            bool bookIsPresent = false;
             foreach (Book book in bookList)
             {
                 if (book.Id == id)
-                    return book;
+                {
+                    apiModel.AddBook(book);
+                    bookIsPresent = true;
+                    break;
+                }
             }
-            throw new Exception();
+
+            if (!bookIsPresent)
+                apiModel.AddError("BookNotPresent");            
         }
 
         public void Add(Book book)
@@ -34,7 +42,7 @@ namespace WebApiDemo.Database
             bookList.Add(book);
         }
 
-        public void Update(int id, Book book)
+        public void Update(int id, Book book, ApiModel apiModel)
         {
             int x = 0;
             for (int i = 0; i < bookList.Count; i++)
@@ -42,18 +50,23 @@ namespace WebApiDemo.Database
                 if (bookList[i].Id == id)
                 {
                     bookList[i] = book;
-                    x=1;
+                    x = 1;
                     break;
                 }
             }
             if (x == 0)
-                throw new Exception();
+                apiModel.AddError("BookNotPresent");
+            //bookList[bookList.IndexOf(bookList.Where().FirstOrDefault())] = book;
+
         }
 
-        public void DeleteBook(int id)
+        public void DeleteBook(int id, ApiModel apiModel)
         {
             var book = bookList.Find(b => b.Id == id);
-            bookList.Remove(book);
+            if (book==null)
+                apiModel.AddError("BookNotPresent");
+            else
+                bookList.Remove(book);
         }
 
     }
