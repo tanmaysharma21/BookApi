@@ -1,0 +1,14 @@
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\bin\Debug\netcoreapp2.2\WebApiDemo.deps.json
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\bin\Debug\netcoreapp2.2\WebApiDemo.runtimeconfig.json
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\bin\Debug\netcoreapp2.2\WebApiDemo.runtimeconfig.dev.json
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\bin\Debug\netcoreapp2.2\WebApiDemo.dll
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\bin\Debug\netcoreapp2.2\WebApiDemo.pdb
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\obj\Debug\netcoreapp2.2\WebApiDemo.csproj.CoreCompileInputs.cache
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\obj\Debug\netcoreapp2.2\WebApiDemo.RazorAssemblyInfo.cache
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\obj\Debug\netcoreapp2.2\WebApiDemo.RazorAssemblyInfo.cs
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\obj\Debug\netcoreapp2.2\WebApiDemo.AssemblyInfoInputs.cache
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\obj\Debug\netcoreapp2.2\WebApiDemo.AssemblyInfo.cs
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\obj\Debug\netcoreapp2.2\WebApiDemo.RazorTargetAssemblyInfo.cache
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\obj\Debug\netcoreapp2.2\WebApiDemo.dll
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\obj\Debug\netcoreapp2.2\WebApiDemo.pdb
+C:\Users\tsharma\Desktop\Web APi\WebApiDemo\WebApiDemo\obj\Debug\netcoreapp2.2\WebApiDemo.csprojResolveAssemblyReference.cache
